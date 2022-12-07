@@ -61,25 +61,25 @@ function Navbar() {
               <div className='w-full items-start flex flex-col md:inline-flex md:flex-row md:w-auto md:ml-auto md:items-center md:h-auto text-black'>
                 <Link
                   href='/'
-                  className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:bg-indigo-900 hover:text-white '
+                  className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:text-cyan-800 '
                 >
                   {"<Home/>"}
                 </Link>
                 <Link
                   href='/blog'
-                  className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:bg-indigo-900 hover:text-white'
+                  className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:text-cyan-800'
                 >
                   {"<Blog/>"}
                 </Link>
                 <Link
                   href='/snippet'
-                  className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:bg-indigo-900 hover:text-white'
+                  className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:text-cyan-800'
                 >
                   {"<SnippetCode/>"}
                 </Link>
                 <Link
                   href='/'
-                  className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:bg-indigo-900 hover:text-white'
+                  className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:text-cyan-800'
                 >
                   {"<ContactMe/>"}
                 </Link>
