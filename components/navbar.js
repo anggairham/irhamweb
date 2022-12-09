@@ -78,10 +78,10 @@ function Navbar() {
                   {"<SnippetCode/>"}
                 </Link>
                 <Link
-                  href='/'
+                  href='/reference'
                   className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:text-cyan-800'
                 >
-                  {"<ContactMe/>"}
+                  {"<Reference/>"}
                 </Link>
               </div>
             </div>

@@ -57,7 +57,7 @@ export default function Home() {
         <hr className='border-2 border-blue-800 mb-2' />
         <h1 className='text-2xl font-medium mb-4'>Recent Articles</h1>
         <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
-          <BlogCard post=''></BlogCard>
+          <BlogCard></BlogCard>
         </div>
       </div>
     </Layout>
