@@ -14,6 +14,21 @@ export default function Index() {
           fields={["Keyword", "Link", "Tags"]}
           items={[
             {
+              keyword: "github markdown emoji list",
+              link: "https://gist.github.com/rxaviers/7360908",
+              tags: "Github, Emoji",
+            },
+            {
+              keyword: "React Table",
+              link: "https://react-table-v7.tanstack.com/docs/overview",
+              tags: "React, Javascript",
+            },
+            {
+              keyword: "React Use Memo",
+              link: "https://www.w3schools.com/react/react_usememo.asp",
+              tags: "React, Javascript",
+            },
+            {
               keyword: "Admin Dashboard React Tailwind Envato",
               link: "http://preview.themeforest.net/item/elstar-react-tailwind-admin-template/full_screen_preview/39768117?_ga=2.123466888.2031695647.1670557144-1863647166.1669876657",
               tags: "React, TailwindCSS",
