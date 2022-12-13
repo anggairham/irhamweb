@@ -14,6 +14,17 @@ export default function Index() {
           fields={["Keyword", "Link", "Tags"]}
           items={[
             {
+              keyword: "module not found next js",
+              link: "https://nextjs.org/docs/messages/module-not-found",
+              tags: "Nextjs",
+            },
+            {
+              keyword:
+                "module not found can't resolve '../components/layout' in '/vercel/path0/pages'",
+              link: "https://stackoverflow.com/questions/65651791/modulenotfounderror-module-not-found-error-cant-resolve-components-chart",
+              tags: "Nextjs, github",
+            },
+            {
               keyword: "react-table and react/jsx-key eslint rules",
               link: "https://github.com/TanStack/table/discussions/2647",
               tags: "Eslint, React-Table",
