@@ -11,7 +11,7 @@ export default function Home() {
       <header className='bg-blue-800'>
         <div className='container mx-auto py-20 text-white text-center '>
           <h1 className='text-3xl uppercase font-bold tracking-wides'>
-            var Sleep; int Code; Bool{" "}
+            var Sleep; int Code; Boolean
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300'>
               Repeat;
             </span>
