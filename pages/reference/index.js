@@ -14,6 +14,21 @@ export default function Index() {
           fields={["Keyword", "Link", "Tags"]}
           items={[
             {
+              keyword: "react-table and react/jsx-key eslint rules",
+              link: "https://github.com/TanStack/table/discussions/2647",
+              tags: "Eslint, React-Table",
+            },
+            {
+              keyword: "next js deploy github pages",
+              link: "https://www.bravolt.com/post/deploying-next-js-to-github-pages https://github.com/DaveAldon/Next.js-and-GitHub-Pages-Example",
+              tags: "Github",
+            },
+            {
+              keyword: "github markdown emoji list",
+              link: "https://gist.github.com/rxaviers/7360908",
+              tags: "Github, Emoji",
+            },
+            {
               keyword: "github markdown emoji list",
               link: "https://gist.github.com/rxaviers/7360908",
               tags: "Github, Emoji",
