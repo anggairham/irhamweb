@@ -46,37 +46,48 @@ export default function ReactTable({ columns, data }) {
         {...getTableProps()}
       >
         <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th
-                  className='py-3 px-6'
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
-                >
-                  {column.render("Header")}
-                  <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? " 🔽"
-                        : " 🔼"
-                      : " ↕"}
-                  </span>
-                </th>
-              ))}
-            </tr>
-          ))}
+          {headerGroups.map((headerGroup) => {
+            const { key, ...restHeaderGroupProps } =
+              headerGroup.getHeaderGroupProps();
+            return (
+              <tr key={key} {...restHeaderGroupProps}>
+                {headerGroup.headers.map((column) => {
+                  const { key, ...restColumn } = column.getHeaderProps();
+                  return (
+                    <th
+                      key={key}
+                      className='py-3 px-6'
+                      {...restColumn(column.getSortByToggleProps())}
+                    >
+                      {column.render("Header")}
+                      <span>
+                        {column.isSorted
+                          ? column.isSortedDesc
+                            ? " 🔽"
+                            : " 🔼"
+                          : " ↕"}
+                      </span>
+                    </th>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </thead>
         <tbody {...getTableBodyProps()}>
           {rows.map((row, i) => {
             prepareRow(row);
+            const { key, ...restRowProps } = row.getRowProps();
             return (
               <tr
+                key={key}
                 className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'
-                {...row.getRowProps()}
+                {...restRowProps}
               >
                 {row.cells.map((cell) => {
+                  const { key, ...restCellProps } = cell.getCellProps();
                   return (
-                    <td className='py-2 px-6' {...cell.getCellProps()}>
+                    <td key={key} className='py-2 px-6' {...restCellProps}>
                       {cell.render("Cell")}
                     </td>
                   );
