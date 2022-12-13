@@ -4,14 +4,15 @@ import HomeCard from "../components/Home/HomeCard";
 import ArchiveBox from "../components/Icon/ArchiveBox";
 import ClipboardDocument from "../components/Icon/ClipboardDocument";
 import CommandLine from "../components/Icon/CommandLine";
+import { getPagedPosts } from "../lib/posts";
 
-export default function Home() {
+export default function Home({ data, next, prev }) {
   return (
     <Layout>
       <header className='bg-blue-800'>
         <div className='container mx-auto py-20 text-white text-center '>
           <h1 className='text-3xl uppercase font-bold tracking-wides'>
-            var Sleep; int Code; Booleand{" "}
+            var Sleep; int Code; Boolean{" "}
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300'>
               Repeat;
             </span>
@@ -56,10 +57,20 @@ export default function Home() {
       <div className='container mx-auto lg:max-w-7xl mt-5'>
         <hr className='border-2 border-blue-800 mb-2' />
         <h1 className='text-2xl font-medium mb-4'>Recent Articles</h1>
-        <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
-          <BlogCard></BlogCard>
+        <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+          {data.map((post) => (
+            <BlogCard key={post.slug} post={post}></BlogCard>
+          ))}
         </div>
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const { data, next, prev } = await getPagedPosts(1);
+
+  return {
+    props: { data, next, prev },
+  };
 }
