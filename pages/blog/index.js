@@ -1,6 +1,6 @@
-import Layout from "../../components/Layout";
-import BlogCard from "../../components/Blog/BlogCard";
-import { getPagedPosts } from "../../lib/posts";
+import Layout from "@/components/Layout";
+import BlogCard from "@/components/Blog/BlogCard";
+import { getPagedPosts } from "@/lib/posts";
 
 export default function Index({ data, next, prev }) {
   return (
