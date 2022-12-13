@@ -27,10 +27,10 @@ export default function Home() {
           <code>var irhamDev;</code>
         </p>
         <p className='mb-3'>
-          irhamDev = "Someone who likes to follow programming developments
+          irhamDev = &quot;Someone who likes to follow programming developments
           starting from developing websites, developing android applications,
           creating simple applications that can make work easier. This website
-          is one way to maintain my interest in programming development.";
+          is one way to maintain my interest in programming development.&quot;;
         </p>
         <code>console.log(irhamDev);</code>
       </div>
