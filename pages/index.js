@@ -1,9 +1,9 @@
-import Layout from "@/components/Layout";
-import BlogCard from "@/components/Blog/BlogCard";
-import HomeCard from "@/components/Home/HomeCard";
-import ArchiveBox from "@/components/Icon/ArchiveBox";
-import ClipboardDocument from "@/components/Icon/ClipboardDocument";
-import CommandLine from "@/components/Icon/CommandLine";
+import Layout from "../components/Layout";
+import BlogCard from "../components/Blog/BlogCard";
+import HomeCard from "../components/Home/HomeCard";
+import ArchiveBox from "../components/Icon/ArchiveBox";
+import ClipboardDocument from "../components/Icon/ClipboardDocument";
+import CommandLine from "../components/Icon/CommandLine";
 
 export default function Home() {
   return (

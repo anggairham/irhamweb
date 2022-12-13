@@ -1,9 +1,9 @@
-import ArchiveBox from "@/components/Icon/ArchiveBox";
-import Layout from "@/components/Layout";
-import ReactTable from "@/components/ReactTable";
-import Table from "@/components/Table";
+import ArchiveBox from "../../components/Icon/ArchiveBox";
+import Layout from "../../components/Layout";
+import ReactTable from "../../components/ReactTable";
+import Table from "../../components/Table";
 import { useMemo } from "react";
-import makeData from "@/lib/makeData";
+import makeData from "../../lib/makeData";
 export default function Index() {
   const columns = useMemo(() => [
     {
