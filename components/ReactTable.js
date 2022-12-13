@@ -52,13 +52,11 @@ export default function ReactTable({ columns, data }) {
             return (
               <tr key={key} {...restHeaderGroupProps}>
                 {headerGroup.headers.map((column) => {
-                  const { key, ...restColumn } = column.getHeaderProps();
+                  const { key, ...restColumn } = column.getHeaderProps(
+                    column.getSortByToggleProps()
+                  );
                   return (
-                    <th
-                      key={key}
-                      className='py-3 px-6'
-                      {...restColumn(column.getSortByToggleProps())}
-                    >
+                    <th key={key} className='py-3 px-6' {...restColumn}>
                       {column.render("Header")}
                       <span>
                         {column.isSorted
