@@ -1,6 +1,7 @@
 import ArchiveBox from "../../components/Icon/ArchiveBox";
 import Layout from "../../components/Layout";
 import ReactTable from "../../components/ReactTable";
+import ReactTableFilter from "../../components/ReactTableFilter";
 import Table from "../../components/Table";
 import { useMemo } from "react";
 import makeData from "../../lib/makeData";
@@ -52,6 +53,7 @@ export default function Index() {
           ]}
         ></Table>
         <ReactTable columns={columns} data={data} />
+        <ReactTableFilter columns={columns} data={data} />
       </div>
     </Layout>
   );
