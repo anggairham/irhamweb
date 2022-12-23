@@ -10,7 +10,6 @@
     "export": "next export"
   },
   "dependencies": {
-    "@tanstack/react-table": "^8.7.2",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "gray-matter": "^4.0.3",
