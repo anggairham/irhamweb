@@ -56,7 +56,7 @@ export default function Home({ data, next, prev }) {
       </div>
       <div className='container mx-auto lg:max-w-7xl mt-5'>
         <hr className='border-2 border-blue-800 mb-2' />
-        <h1 className='text-2xl font-medium mb-4'>Recent Articles</h1>
+        <h1 className='text-2xl font-medium mb-4'>Recent Article's</h1>
         <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
           {data.map((post) => (
             <BlogCard key={post.slug} post={post}></BlogCard>
