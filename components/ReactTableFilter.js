@@ -1,45 +1,65 @@
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy, useFilters, useGlobalFilter } from "react-table";
+import { useMemo } from "react";
+import { matchSorter } from "match-sorter";
+import GlobalFilter from "./GlobalFilter";
+
+function fuzzyTextFilterFn(rows, id, filterValue) {
+  return matchSorter(rows, filterValue, { keys: [(row) => row.values[id]] });
+}
+
+// Let the table remove the filter if the string is empty
+fuzzyTextFilterFn.autoRemove = (val) => !val;
 
 export default function ReactTable({ columns, data }) {
-  // Use the state and functions returned from useTable to build your UI
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable(
-      {
-        columns,
-        data,
+  const filterTypes = useMemo(
+    () => ({
+      // Add a new fuzzyTextFilterFn filter type.
+      fuzzyText: fuzzyTextFilterFn,
+      // Or, override the default text filter to use
+      // "startWith"
+      text: (rows, id, filterValue) => {
+        return rows.filter((row) => {
+          const rowValue = row.values[id];
+          return rowValue !== undefined
+            ? String(rowValue)
+                .toLowerCase()
+                .startsWith(String(filterValue).toLowerCase())
+            : true;
+        });
       },
-      useSortBy
-    );
+    }),
+    []
+  );
+
+  // Use the state and functions returned from useTable to build your UI
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    state,
+    preGlobalFilteredRows,
+    setGlobalFilter,
+    allColumns,
+  } = useTable(
+    {
+      columns,
+      data,
+      // defaultColumn, // Be sure to pass the defaultColumn option
+      filterTypes,
+    },
+    useFilters, // useFilters!
+    useGlobalFilter, // useGlobalFilter!
+    useSortBy
+  );
   return (
     <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
-      <div className='flex justify-end'>
-        <label htmlFor='table-search' className='sr-only'>
-          Search
-        </label>
-        <div className='relative'>
-          <div className='flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none'>
-            <svg
-              className='w-5 h-5 text-gray-500 dark:text-gray-400'
-              aria-hidden='true'
-              fill='currentColor'
-              viewBox='0 0 20 20'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                fillRule='evenodd'
-                d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z'
-                clipRule='evenodd'
-              />
-            </svg>
-          </div>
-          <input
-            type='text'
-            id='table-search-users'
-            className='block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
-            placeholder='Search for users'
-          />
-        </div>
-      </div>
+      <GlobalFilter
+        preGlobalFilteredRows={preGlobalFilteredRows}
+        globalFilter={state.globalFilter}
+        setGlobalFilter={setGlobalFilter}
+      />
 
       <table
         className='w-full text-sm text-left text-gray-500 dark:text-gray-400'
@@ -56,14 +76,14 @@ export default function ReactTable({ columns, data }) {
                     column.getSortByToggleProps()
                   );
                   return (
-                    <th key={key} className='py-3 px-6' {...restColumn}>
+                    <th key={key} className='py-2 px-2' {...restColumn}>
                       {column.render("Header")}
                       <span>
                         {column.isSorted
                           ? column.isSortedDesc
                             ? " 🔽"
                             : " 🔼"
-                          : " ↕"}
+                          : " "}
                       </span>
                     </th>
                   );
@@ -85,7 +105,7 @@ export default function ReactTable({ columns, data }) {
                 {row.cells.map((cell) => {
                   const { key, ...restCellProps } = cell.getCellProps();
                   return (
-                    <td key={key} className='py-2 px-6' {...restCellProps}>
+                    <td key={key} className='py-2 px-2' {...restCellProps}>
                       {cell.render("Cell")}
                     </td>
                   );
@@ -93,6 +113,13 @@ export default function ReactTable({ columns, data }) {
               </tr>
             );
           })}
+          {rows.length === 0 && (
+            <tr>
+              <td className='text-center' colspan={allColumns.length}>
+                No data found!
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

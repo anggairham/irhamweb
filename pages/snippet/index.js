@@ -1,39 +1,16 @@
-import ArchiveBox from "../../components/Icon/ArchiveBox";
-import Layout from "../../components/Layout";
-import ReactTable from "../../components/ReactTable";
-import ReactTableFilter from "../../components/ReactTableFilter";
-import Table from "../../components/Table";
 import { useMemo } from "react";
-import makeData from "../../lib/makeData";
-export default function Index() {
-  const columns = useMemo(() => [
-    {
-      Header: "First Name",
-      accessor: "firstName",
-    },
-    {
-      Header: "Last Name",
-      accessor: "lastName",
-    },
-    {
-      Header: "Age",
-      accessor: "age",
-    },
-    {
-      Header: "Visits",
-      accessor: "visits",
-    },
-    {
-      Header: "Status",
-      accessor: "status",
-    },
-    {
-      Header: "Profile Progress",
-      accessor: "progress",
-    },
-  ]);
 
-  const data = useMemo(() => makeData(), []);
+import Layout from "../../components/Layout";
+import ReactTableFilter from "../../components/ReactTableFilter";
+import { COLUMNS } from "../../lib/snippet_column";
+import DATA from "../../lib/snippet_data.json";
+
+// import ArchiveBox from "../../components/Icon/ArchiveBox";
+// import Table from "../../components/Table";
+export default function Index() {
+  const columns = useMemo(() => COLUMNS, []);
+
+  const data = useMemo(() => DATA, []);
 
   return (
     <Layout>
@@ -42,7 +19,7 @@ export default function Index() {
         <p className='mt-2'>
           Beberapa koleksi snippetcode yang bisa digunakan secara gratis
         </p>
-        <Table
+        {/* <Table
           fields={["Keyword", "Tags", "Button"]}
           items={[
             {
@@ -51,8 +28,7 @@ export default function Index() {
               button: <ArchiveBox />,
             },
           ]}
-        ></Table>
-        <ReactTable columns={columns} data={data} />
+        ></Table> */}
         <ReactTableFilter columns={columns} data={data} />
       </div>
     </Layout>

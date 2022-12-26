@@ -1,7 +1,15 @@
+import { useMemo } from "react";
+
 import Layout from "../../components/Layout";
-import Table from "../../components/Table";
+// import Table from "../../components/Table";
+import ReactTableFilter from "../../components/ReactTableFilter";
+import { COLUMNS } from "../../lib/reference_column";
+import DATA from "../../lib/reference_data.json";
 
 export default function Index() {
+  const columns = useMemo(() => COLUMNS, []);
+
+  const data = useMemo(() => DATA, []);
   return (
     <Layout>
       <div className='container mx-auto lg:max-w-7xl mt-10'>
@@ -10,82 +18,7 @@ export default function Index() {
           Beberapa referensi website yang digunakan ketika belajar bahasa
           pemrograman
         </p>
-        <Table
-          fields={["Keyword", "Link", "Tags"]}
-          items={[
-            {
-              keyword: "module not found next js",
-              link: "https://nextjs.org/docs/messages/module-not-found",
-              tags: "Nextjs",
-            },
-            {
-              keyword:
-                "module not found can't resolve '../components/layout' in '/vercel/path0/pages'",
-              link: "https://stackoverflow.com/questions/65651791/modulenotfounderror-module-not-found-error-cant-resolve-components-chart",
-              tags: "Nextjs, github",
-            },
-            {
-              keyword: "react-table and react/jsx-key eslint rules",
-              link: "https://github.com/TanStack/table/discussions/2647",
-              tags: "Eslint, React-Table",
-            },
-            {
-              keyword: "next js deploy github pages",
-              link: "https://www.bravolt.com/post/deploying-next-js-to-github-pages https://github.com/DaveAldon/Next.js-and-GitHub-Pages-Example",
-              tags: "Github",
-            },
-            {
-              keyword: "github markdown emoji list",
-              link: "https://gist.github.com/rxaviers/7360908",
-              tags: "Github, Emoji",
-            },
-            {
-              keyword: "github markdown emoji list",
-              link: "https://gist.github.com/rxaviers/7360908",
-              tags: "Github, Emoji",
-            },
-            {
-              keyword: "React Table",
-              link: "https://react-table-v7.tanstack.com/docs/overview",
-              tags: "React, Javascript",
-            },
-            {
-              keyword: "React Use Memo",
-              link: "https://www.w3schools.com/react/react_usememo.asp",
-              tags: "React, Javascript",
-            },
-            {
-              keyword: "Admin Dashboard React Tailwind Envato",
-              link: "http://preview.themeforest.net/item/elstar-react-tailwind-admin-template/full_screen_preview/39768117?_ga=2.123466888.2031695647.1670557144-1863647166.1669876657",
-              tags: "React, TailwindCSS",
-            },
-            {
-              keyword: "Html to React",
-              link: "https://magic.reactjs.net/htmltojsx.html",
-              tags: "React",
-            },
-            {
-              keyword: "TailwindCSS Component",
-              link: "https://flowbite.com/docs/getting-started/introduction/",
-              tags: "TailwindCSS",
-            },
-            {
-              keyword: "loop object keys javascript",
-              link: "https://flexiple.com/javascript/loop-through-object-javascript/",
-              tags: "Javascript",
-            },
-            {
-              keyword: "iterate over object values react",
-              link: "https://stackoverflow.com/questions/40950546/react-js-right-way-to-iterate-over-object-instead-of-object-entries",
-              tags: "React, Javascript",
-            },
-            {
-              keyword: "react initial props",
-              link: "https://blog.logrocket.com/complete-guide-react-default-props/",
-              tags: "React, Javascript",
-            },
-          ]}
-        ></Table>
+        <ReactTableFilter columns={columns} data={data} />
       </div>
     </Layout>
   );
