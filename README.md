@@ -10,6 +10,9 @@
 - https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
 - https://daily-dev-tips.com/posts/nextjs-add-lang-attribute-to-html-tag/
 - https://www.bezkoder.com/react-table-example-hooks-crud/
+- https://dev.to/frasnym/connecting-your-nextjs-mini-project-with-google-spreadsheets-as-database-1o2d
+- https://thenewstack.io/how-to-use-google-sheets-as-a-database-with-react-and-ssr/
+- https://kierandixon.com/convert-google-sheets-database-to-array-of-objects/
 
 # Animation
 

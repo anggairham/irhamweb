@@ -4,7 +4,7 @@ import HomeCard from "../components/Home/HomeCard";
 import ArchiveBox from "../components/Icon/ArchiveBox";
 import ClipboardDocument from "../components/Icon/ClipboardDocument";
 import CommandLine from "../components/Icon/CommandLine";
-import { getPagedPosts } from "../lib/posts";
+import { getPagedPosts } from "../libs/posts";
 
 export default function Home({ data, next, prev }) {
   return (

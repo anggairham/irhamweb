@@ -12,6 +12,7 @@
   "dependencies": {
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
+    "googleapis": "^110.0.0",
     "gray-matter": "^4.0.3",
     "lodash.kebabcase": "^4.1.1",
     "markdown-it": "^13.0.1",

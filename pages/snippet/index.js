@@ -2,8 +2,8 @@ import { useMemo } from "react";
 
 import Layout from "../../components/Layout";
 import ReactTableFilter from "../../components/ReactTableFilter";
-import { COLUMNS } from "../../lib/snippet_column";
-import DATA from "../../lib/snippet_data.json";
+import { COLUMNS } from "../../libs/snippet_column";
+import DATA from "../../libs/snippet_data.json";
 
 // import ArchiveBox from "../../components/Icon/ArchiveBox";
 // import Table from "../../components/Table";

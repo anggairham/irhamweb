@@ -4,9 +4,9 @@ import Layout from "../../components/Layout";
 // import Table from "../../components/Table";
 import ReactTableFilter from "../../components/ReactTableFilter";
 import { COLUMNS } from "../../libs/reference_column";
-import { getSheet } from "../../libs/sheets";
+import DATA from "../../libs/reference_data.json";
 
-export default function Index({ DATA }) {
+export default function Index() {
   const columns = useMemo(() => COLUMNS, []);
 
   const data = useMemo(() => DATA, []);
@@ -22,14 +22,4 @@ export default function Index({ DATA }) {
       </div>
     </Layout>
   );
-}
-
-export async function getStaticProps(context) {
-  const DATA = await getSheet();
-  return {
-    props: {
-      DATA: DATA,
-    },
-    revalidate: 1, // In seconds
-  };
 }

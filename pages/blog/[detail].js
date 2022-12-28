@@ -11,7 +11,7 @@ export default function Detail() {
         corporis voluptatem ratione. Praesentium quam minus quae soluta ab?
         Natus architecto voluptatem cupiditate sequi nihil minima, odio mollitia
         dolores nisi distinctio et placeat, amet, numquam impedit! Cupiditate
-        accusamus blanditiis libero iure soluta unde deleniti temporibus
+        accusamus blanditiis libsero iure soluta unde deleniti temporibus
         quisquam commodi labore eos, provident dolorum est suscipit, voluptate
         consequuntur ea eveniet molestiae explicabo. Corporis nisi rerum eaque
         nemo error at quo ipsum laudantium sit.
