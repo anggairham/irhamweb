@@ -1,3 +1,9 @@
+# Racikan
+
+- Menggunakan node v18.8.0, menggunakan npm
+- npm install, npm run dev
+- menggunakan vercel
+
 # Tutorial
 
 - https://medium.com/devsaurus-class/tutorial-next-js-2021-47661386673b
