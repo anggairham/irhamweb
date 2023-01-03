@@ -28,7 +28,7 @@ export async function getSheet() {
       }
       databaseAsObjectArray.push(entry);
     }
-    console.log(databaseAsObjectArray);
+    // console.log(databaseAsObjectArray);
     return databaseAsObjectArray;
     // console.log(response);
 
