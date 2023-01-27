@@ -1,6 +1,14 @@
+import { useRouter } from "next/router";
+
 import Layout from "../../components/Layout";
 
-export default function Detail() {
+import { getPostBySlug, getAllPosts } from "../../libs/posts";
+
+export default function BlogDetail({ blog, preview }) {
+  const router = useRouter();
+  if (!router.isFallback && !blog?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
   return (
     <Layout>
       <div className='container mx-auto mt-16 px-4 py-8 shadow-sm rounded-2xl bg-white md:px-5'>
@@ -18,4 +26,30 @@ export default function Detail() {
       </div>
     </Layout>
   );
+}
+export async function getStaticProps({ params }) {
+  const blog = await getPostBySlug(params.slug);
+  return {
+    props: {
+      blog: {
+        ...blog,
+        content: blog.content,
+      },
+    },
+    revalidate: 3,
+  };
+}
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
 }

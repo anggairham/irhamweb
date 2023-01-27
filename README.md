@@ -3,6 +3,7 @@
 - Menggunakan node v18.8.0, menggunakan npm
 - npm install, npm run dev
 - menggunakan vercel
+- Jangan Lupa setting env variabel pada vercel
 
 # Tutorial
 
