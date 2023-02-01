@@ -1,15 +1,17 @@
 ---
-title: Bug Ekstension Gitlens on VSCode
+title: Bug Gitlens on VSCode
 date: "2022-12-08"
 excerpt: Permasahan Word Wrap di VS code dikarenakan GitLens
-summary:
+summary: Kenapa selalu muncul scroll horizontal di VSCode, walaupun word wrap aktif?
 author: Angga Irham Stianto
 published: true
 featured: false
 tags: [vscode]
-coverImage:
+coverImage: /thumbnails/vscode-gitlens-bug/vscode.jpg
 lang: id
 enready: false
 ---
+
+Bug Gitlens on VSCode
 
 Setelah mencoba googling, otak-atik settingan vs code tentang word wrap. Kenapa selalu muncul scroll horizontal jika text terlalu panjang?. Akhirnya ketemu ketika saya coba uninstall ekstensi GitLens, Word Wrap pun kembali normal

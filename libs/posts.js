@@ -30,6 +30,7 @@ async function getPostBySlug(slug) {
     slug: realSlug,
     excerpt: data.excerpt,
     summary: data.summary,
+    coverImage: data.coverImage,
     tags: data.tags,
     date: data.date,
     title: data.title,
