@@ -1,6 +1,6 @@
 ---
 title: Bug Gitlens on VSCode
-date: "2022-12-08"
+date: "2023-01-31"
 excerpt: Permasahan Word Wrap di VS code dikarenakan GitLens
 summary: Kenapa selalu muncul scroll horizontal di VSCode, walaupun word wrap aktif?
 author: Angga Irham Stianto

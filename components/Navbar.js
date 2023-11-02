@@ -16,7 +16,7 @@ function Navbar() {
               className='inline-flex items-center p-2 m-auto animate-gradient from-indigo-500 via-sky-500 to-indigo-500 bg-[length:500%_500%] bg-gradient-to-r rounded-md'
             >
               <span className='text-lg text-white font-bold tracking-widest'>
-                Irham <span className=''>Dev</span>
+                Irham <span className=''>Web</span>
               </span>
             </Link>
             <button

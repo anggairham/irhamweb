@@ -25,15 +25,15 @@ export default function Home({ data, next, prev }) {
       <div className='container mx-auto lg:max-w-7xl mt-5 px-4 py-4  bg-white font-serif shadow-sm rounded-lg'>
         <h1 className='mb-3 text-2xl'>Welcome</h1>
         <p className='mb-3'>
-          <code>var irhamDev;</code>
+          <code>var irhamWeb;</code>
         </p>
         <p className='mb-3'>
-          irhamDev = &quot;Someone who likes to follow programming developments
+          irhamWeb = &quot;Someone who likes to follow programming developments
           starting from developing websites, developing android applications,
           creating simple applications that can make work easier. This website
           is one way to maintain my interest in programming development.&quot;;
         </p>
-        <code>console.log(irhamDev);</code>
+        <code>console.log(irhamWeb);</code>
       </div>
       <div className='container mx-auto lg:max-w-7xl mt-5 '>
         <div className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
