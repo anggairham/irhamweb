@@ -115,7 +115,7 @@ export default function ReactTable({ columns, data }) {
           })}
           {rows.length === 0 && (
             <tr>
-              <td className='text-center' colspan={allColumns.length}>
+              <td className='text-center' colSpan={allColumns.length}>
                 No data found!
               </td>
             </tr>

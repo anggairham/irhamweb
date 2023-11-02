@@ -4,6 +4,7 @@
 - npm install, npm run dev
 - menggunakan vercel
 - Jangan Lupa setting env variabel pada vercel
+- https://github.com/anggairham/all-note/tree/main/irhamweb
 
 # Tutorial
 
