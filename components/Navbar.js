@@ -8,7 +8,7 @@ function Navbar() {
   };
   return (
     <>
-      <nav className='bg-white font-mono border-b-2'>
+      <nav className='bg-blue-800 font-mono border-b-2 '>
         <div className='container mx-auto lg:max-w-7xl'>
           <div className='flex items-center flex-wrap py-2'>
             <Link
@@ -58,7 +58,7 @@ function Navbar() {
                 active ? "" : "hidden"
               }   w-full md:inline-flex md:flex-grow md:w-auto`}
             >
-              <div className='w-full items-start flex flex-col md:inline-flex md:flex-row md:w-auto md:ml-auto md:items-center md:h-auto text-black'>
+              <div className='w-full items-start flex flex-col md:inline-flex md:flex-row md:w-auto md:ml-auto md:items-center md:h-auto text-white'>
                 <Link
                   href='/'
                   className='md:w-auto md:border-none w-full border-b px-3 py-2 rounded font-medium hover:text-cyan-800 '
